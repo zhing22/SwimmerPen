@@ -12,7 +12,7 @@ import Animated, {
 let initX = 300;
 let initY = 300;
 export default function Line() {
-  // 平移
+  // Move
   const positionX = useSharedValue(initX);
   const savedPositionX = useSharedValue(initX);
   const positionY = useSharedValue(initY);
@@ -28,7 +28,7 @@ export default function Line() {
       savedPositionY.value = positionY.value;
     });
 
-  // 旋转
+  // ROtate
   const rotation = useSharedValue(0);
   const savedRotation = useSharedValue(0);
 
@@ -40,7 +40,7 @@ export default function Line() {
       savedRotation.value = rotation.value;
     });
 
-  // 缩放
+  // Zoom
   const scale = useSharedValue(1);
   const savedScale = useSharedValue(1);
 
@@ -66,13 +66,13 @@ export default function Line() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <GestureDetector gesture={composed}>
         <Animated.View style={[styles.box, animatedStyle]}>
-            <View style={{
-                width: '100%',
-                height: 2,
-                backgroundColor: 'red'
-            }}>
-
-            </View>
+          <View
+            style={{
+              width: "100%",
+              height: 2,
+              backgroundColor: "red",
+            }}
+          ></View>
         </Animated.View>
       </GestureDetector>
     </GestureHandlerRootView>
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     left: initX,
     top: initY,
     zIndex: 1000,
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

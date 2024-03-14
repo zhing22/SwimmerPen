@@ -37,8 +37,6 @@ const Statistics = ({ navigation, route }) => {
   const saveCSV = async (content) => {
     const fileUri = FileSystem.documentDirectory + "data.csv";
 
-
-
     try {
       await FileSystem.writeAsStringAsync(fileUri, content);
       await shareAsync(fileUri, { UTI: ".csv", mimeType: "application/text" });
@@ -156,36 +154,35 @@ const Statistics = ({ navigation, route }) => {
         initChart('main1', ${JSON.stringify(xData)}, ${JSON.stringify(y1Data)});
         initChart('main2', ${JSON.stringify(xData)}, ${JSON.stringify(y2Data)});
         function initChart(id, xData, yData) {
-          // 定义折线图的配置项
           var options = {
               chart: {
                   type: 'line' 
               },
               title: {
-                text: '' // 指定图表标题
+                text: '' 
             },
               xAxis: {
                   categories: xData
               },
               yAxis: {
                 title: {
-                    text: '' // 指定 y 轴标题
+                    text: '' 
                 }
             },
               series: [{
-                  data: yData // 指定系列数据
+                  data: yData 
               }],
               credits: {
-                enabled: false // 去掉 Highcharts.com 标识
+                enabled: false 
             },
             legend: {
-              enabled: false // 设置图例不可见
+              enabled: false 
           },
             plotOptions: {
               series: {
-                  color: 'black', // 设置线段颜色为黑色
+                  color: 'black', 
                   marker: {
-                      fillColor: 'black' // 设置数据点颜色为黑色
+                      fillColor: 'black' 
                   }
               }
             },

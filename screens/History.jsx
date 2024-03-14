@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Feather } from "@expo/vector-icons";
 
 const History = ({ navigation }) => {
-  // 获取到的所有元数据与标记数据
+  // Metadata storage
   let metadata = {
     swimStroke: "FreeStyle",
     poolLength: 25,
@@ -23,7 +23,7 @@ const History = ({ navigation }) => {
       { name: "50M", timestamp: 0, sc: 0 },
     ],
   };
-  // 假数据
+  // dummy data
   const [datas, setDatas] = useState([metadata, metadata, metadata, metadata]);
   return (
     <LinearGradient

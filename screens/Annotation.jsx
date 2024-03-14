@@ -48,7 +48,7 @@ const Annotation = ({ navigation }) => {
       const { status } =
         await ImagePicker.requestMediaLibraryPermissionsAsync();
       if (status !== "granted") {
-        alert("请允许访问相册");
+        alert("Please grant access to gallery");
       }
     })();
   }, []);
@@ -429,8 +429,8 @@ const Annotation = ({ navigation }) => {
               position: "absolute",
               left: 0,
               top: 0,
-              width: "100%",
-              height: "100%",
+              width: "80%",
+              height: "10%",
               zIndex: 10000,
             }}
           >
@@ -824,7 +824,7 @@ const Annotation = ({ navigation }) => {
                 sc: v.sc,
               });
             });
-            // 获取到的所有元数据与标记数据
+            // Metatdata store
             let metadata = {
               swimStroke,
               poolLength,
